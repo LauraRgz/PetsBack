@@ -1,0 +1,23 @@
+type Animal{
+    _id: ID!
+    name: String!
+    species: String!
+    breed: String!
+    age: Int!
+    description: String!
+    image: String!
+}
+type AnimalShelter{
+    name: String!
+    description: String!
+    phone: String!
+    address: String!
+    hours: String!
+}
+
+type Query {
+    getAnimals(shelter: Int!): [Animal!] 
+    getAnimal(animalID: ID!, shelter: Int!): Animal!
+    getSpecies(species: String!, shelter: Int!): [Animal!]
+    getShelterData(shelter: Int!): AnimalShelter!
+}
